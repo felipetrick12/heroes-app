@@ -2,14 +2,15 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 
 export const  HeroeCard =(
+    
     {
         id,
         superhero,
-        publisher,
         alter_ego,
         first_appearance,
-        characters,
-}) =>{
+        characters, 
+    }) =>{
+        console.log(id);
         return (
             <div class="row g-0">
             <div class="col-md-4">
