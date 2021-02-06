@@ -10,21 +10,21 @@ export const  HeroeCard =(
         first_appearance,
         characters, 
     }) =>{
-        console.log(id);
+       
         return (
-            <div class="row g-0">
-            <div class="col-md-4">
-            <img src={`../../assets/${id}.jpg`} className='card-img' alt={superhero}/>
+            <div className=" row g-0 ">
+            <div className="col-md-4">
+            <img src={`../../assets/${id}.jpg`} className='card-img animate__animated  animate__flipInX' alt={superhero}/>
             </div>
-            <div class="col-md-8">
-            <div class="card-body">
-                <h5 class="card-title">{superhero}</h5>
-                <p class="card-text">{alter_ego}</p>
+            <div className="col-md-8">
+            <div className="card-body">
+                <h5 className="card-title">{superhero}</h5>
+                <p className="card-text">{alter_ego}</p>
                 {
                     (alter_ego!==characters) &&
-                    <p class="card-text">{characters}</p> 
+                    <p className="card-text">{characters}</p> 
                 }
-                <p class="card-text"><small class="text-muted">{first_appearance}</small></p>
+                <p className="card-text"><small className="text-muted">{first_appearance}</small></p>
                 <Link to={`/heroe/${id}`}> Mas...</Link>
             </div>
             </div>

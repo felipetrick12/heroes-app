@@ -19,10 +19,12 @@ export default function NavBar() {
         </li>
       </ul>
       <div className="d-flex">
-        <Link to='/login' className="btn btn-outline-primary">Logout</Link>
+      <Link to='/search' className="btn btn-outline-success mx-2">Search</Link>
+        <Link to='/login' className="btn btn-outline-primary ">Logout</Link>
       </div>
     </div>
   </div>
+
 </nav>
   )
 }
