@@ -1,7 +1,19 @@
-import React from "react";
-import { Link, NavLink } from 'react-router-dom';
+import React, { useContext } from "react";
+import { Link, NavLink, useHistory } from 'react-router-dom';
+import { AuthContext } from "../../auth/AuthContext";
+import { types } from "../../types/types";
 
 export default function NavBar() {
+
+   const {user:{name},dispatch} =useContext(AuthContext);
+    const history = useHistory();
+
+
+   const handleLogout =() => {
+    history.replace('/login')
+    dispatch({
+      type: types.logout });
+   }
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-light">
   <div className="container-fluid">
@@ -19,8 +31,9 @@ export default function NavBar() {
         </li>
       </ul>
       <div className="d-flex">
+      <span className="nav-link">{name}</span>
       <Link to='/search' className="btn btn-outline-success mx-2">Search</Link>
-        <Link to='/login' className="btn btn-outline-primary ">Logout</Link>
+        <button  className="btn btn-outline-primary" onClick={handleLogout}>Logout</button>
       </div>
     </div>
   </div>
