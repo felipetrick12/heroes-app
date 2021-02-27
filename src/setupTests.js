@@ -1,10 +1,9 @@
-import React from 'react'
 
-export default function SetupTests() {
-    return (
-        <div>
-            <img src="D:/Udemy/React/05-heroes-app/heroes-app/src/assets/descarga.jpg"/>
-        </div>
-    )
-}
+import '@testing-library/jest-dom';
+import Enzyme from 'enzyme';
+import Adapter from '@wojtekmaj/enzyme-adapter-react-17';
+import {createSerializer} from 'enzyme-to-json';
+
+Enzyme.configure({ adapter: new Adapter() });
+expect.addSnapshotSerializer(createSerializer({mode: 'deep'}));
 
